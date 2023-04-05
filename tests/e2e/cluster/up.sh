@@ -58,7 +58,7 @@ main() {
 	# Untaint the node so that pods can be scheduled on it.
 	for role in master control-plane; do
 		kubectl taint nodes "$(hostname)" \
-			"node-role.kubernetes.io/$role:NoSchedule-"
+			"node.kubernetes.io/$role:NoSchedule-"
 	done
 }
 
